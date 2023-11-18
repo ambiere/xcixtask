@@ -13,4 +13,3 @@ Modern and efficient RESTful to-do API built using the Fastify framework —prov
 ## Introduction
 
 Welcome to the xcixtask Todo API, a modern and efficient RESTful to-do API built with the Fastify framework. This API is designed to provide a seamless and user-friendly experience for managing your to-do tasks. With a focus on performance and ease of use, the xcixtask Todo API empowers you to effortlessly create, update, retrieve, and delete your to-do items, all while ensuring secure authentication and authorization.
-# xcixtask

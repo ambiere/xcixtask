@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "$id": "schema:post:status:error:response",
+  "required": ["error"],
+  "additionalProperties": false,
+  "properties": {
+    "error": {
+      "type": "string"
+    }
+  }
+}

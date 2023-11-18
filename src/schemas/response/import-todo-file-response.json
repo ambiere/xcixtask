@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "$id": "schema:file:import:todo:response",
+  "additionalProperties": false,
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

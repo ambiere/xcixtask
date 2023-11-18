@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "$id": "schema:get:todo:param",
+  "required": ["id"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string"
+    }
+  }
+}

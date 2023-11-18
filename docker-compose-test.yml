@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  mongo:
+    image: mongo:4
+    volumes:
+      - data:/data/db
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "3042:3000"
+    environment:
+      JWT_SECRET: thisisasupersucuredsectred-123456789
+      MONGO_URL: mongodb://mongo:27017/test
+      JWT_EXPIRE_IN: 1h
+volumes:
+  data:
