@@ -41,6 +41,9 @@ The xcixtask API serves as a fundamental tool for applications requiring task ma
 ## Table of Contents
 
 - [Getting Started](#1-getting-started)
+  - [Prerequisites](#11-prerequisites)
+  - [Installation](#12-installation)
+  - [Running API](#13-running-the-api)
 -
 
 ## 1. Getting Started
