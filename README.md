@@ -1,4 +1,4 @@
-**Abstract**
+## Introduction
 
 Welcome to the **xcixtask** Todo API, a modern and efficient RESTful to-do API built with the Fastify framework. This API is designed to provide a seamless and user-friendly experience for managing your to-do tasks. With a focus on performance and ease of use, the xcixtask Todo API empowers you to effortlessly create, update, retrieve, and delete your to-do items, all while ensuring secure authentication and authorization. The **xcixtask** API is a versatile and efficient ToDo API developed using the Fastify framework. It provides a robust platform for managing tasks, enabling users to organize, create, update, retrieve, and delete tasks effortlessly. Designed with simplicity and performance in mind, this API offers a seamless experience for developers looking to integrate task management functionality into their applications.
 
@@ -12,34 +12,28 @@ Welcome to the **xcixtask** Todo API, a modern and efficient RESTful to-do API b
 
 <br>
 
-## Table of Contents
+---
+
+### Table of Contents
 
 - [Getting Started](#1-getting-started)
-  - [Prerequisites](#11-prerequisites)
   - [Installation](#12-installation)
   - [Running API](#13-running-the-api)
 -
 
-## Getting Started
+## 1.0 Getting Started
 
-If you would like to run the API locally on your machine, follow the installation procedures below. Once set up, developers can explore the API endpoints, authenticate users, and start integrating task management functionalities seamlessly into their applications.
-<br>
+### 1.1 Development
 
-### Prerequisites
-
-Before getting started, ensure you have the following prerequisites:
+If you would like to run the API locally on your machine, follow the installation procedures below. Once set up, developers can explore the API endpoints, authenticate users, and start integrating task management functionalities seamlessly into their applications but before getting started, ensure you have the following prerequisites:
 
 1 **Node.js**: Make sure Node.js is installed on your system. You can download it from [nodejs.org](https://nodejs.org/en/download/current). <br>
-2 **pnpm (Perfomant Node Package Manager)**: Fast, disk space efficient package manager. Install pnpm globally by running **`npm install -g pnpm`** in your terminal/command prompt and verify pnpm by running **`pnpm -v`**. or refer to pnpm's installation guide from [pnpm.io](https://pnpm.io/installation).
+2 **pnpm (Perfomant Node Package Manager)**: Fast, disk space efficient package manager. Install pnpm globally by running `npm install -g pnpm` in your terminal/command prompt and verify pnpm by running `pnpm -v`. or refer to pnpm's installation guide from [pnpm.io](https://pnpm.io/installation).
 3 **GitHub Account**: Create or log in to your GitHub account to access the xcixtask API repository. <br>
 4 **Docker**: If you prefer running the API within a Docker container, install Docker Desktop or Docker Engine according to your operating system from [docker](docker.com/get-started).
 <br>
 
-### Installation
-
-Follow these steps to get the **xcixtask** API up and running on your local machine:
-
-#### Clone the Repository
+### 1.1.1 Installation
 
 Open your terminal or command prompt and run the following commands
 
@@ -49,47 +43,63 @@ cd xcixtask # Move into xcixtask directory
 pnpm install # Install project dependencies
 ```
 
-#### Set Up Configuration
+> Note
+> Before starting the API remember to set up configuration. Refer to [.env.example](#.env.example) file to set up the necessary configurations.
 
-Refer to [.env.example](#.env.example) file to set up the necessary configurations.
-
-### Running the API
+### 1.1.2 Running the API
 
 Once the dependencies are installed and the configuration is set up, use the following command to start the API server:
 
 ```bash
 pnpm start
-
 #or
-
 pnpm run dev #development mode
 ```
 
-The API should now be running locally. You can access the API endpoints via **`http://0.0.0.0:your-port`**.
+The API should now be running locally. You can access the API endpoints via `http://0.0.0.0:your-port`.
 
-Using the Deployed API:
+<br>
 
-The xcixtask API is deployed and accessible via HTTPS requests. Follow these steps to interact with the deployed API:
+### 1.2 Deployed API
 
-    Base URL: Use the following base URL to access the deployed API:
+The xcixtask API is deployed and accessible via HTTPS requests. To interact with the deployed API, use the following base URL to access the deployed API:
 
-    arduino
+```bash
+https://xcixtask.fly.dev
 
-    https://your-deployed-api-url.com
+```
 
-    Authentication (if applicable): If the deployed API requires authentication, ensure you have the necessary credentials (API key, access token, etc.) to include in your requests.
+The deployed API requires authentication. Ensure you have necessary credential (access token) to include in your requests. To obtain valid token, you first have to register by making a POST request to `https://xcixtask.fly.dev/v1/auth/register` with username and password as the request payload.
 
-    Explore Endpoints: Refer to the API Documentation for detailed information on available endpoints, request parameters, and response formats.
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"username":"<username>", "password":"<password>"}' https://xcixtask.fly.dev/v1/auth/register
 
-Example Request:
+#response
+{registered: true}
+```
+
+After successfully registration, you must authenticate to acquire the access token.
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"username":"<username>", "password":"<password>"}' https://xcixtask.fly.dev/v1/auth/authenticate
+
+#response
+{token: "<access token>"}
+
+```
+
+> Explore Endpoints:
+> Refer to the API Documentation for detailed information on available endpoints, request parameters, and response formats.
+
+<br>
+
+### 1.2.1 Example Request
 
 Here's an example using cURL to create a new task on the deployed API:
 
-bash
+```bash
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer <access token>" -d '{"title": "Task Title"}' https://https://xcixtask.fly.dev/v1/todos
 
-curl -X POST -H "Content-Type: application/json" -d '{"title": "Task Title", "description": "Task Description"}' https://your-deployed-api-url.com/tasks
-
-Note:
-
-    Ensure that you replace https://your-deployed-api-url.com with the actual URL of your deployed API.
-    If there are any specific headers, authentication tokens, or additional configurations required to access the deployed API, provide these details in this section.
+#response
+"<insertedId>"
+```
