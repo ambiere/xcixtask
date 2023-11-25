@@ -12,8 +12,6 @@ Welcome to the **xcixtask** Todo API, a modern and efficient RESTful to-do API b
 
 <br>
 
-<br>
-
 ## 1.0 Development
 
 If you would like to run the API locally on your machine, follow the installation procedures below. Once set up, developers can explore the API endpoints, authenticate users, and start integrating task management functionalities seamlessly into their applications but before getting started, ensure you have the following prerequisites:
@@ -22,8 +20,6 @@ If you would like to run the API locally on your machine, follow the installatio
 2 **pnpm (Perfomant Node Package Manager)**: Fast, disk space efficient package manager. Install pnpm globally by running `npm install -g pnpm` in your terminal/command prompt and verify pnpm by running `pnpm -v`. or refer to pnpm's installation guide from [pnpm.io](https://pnpm.io/installation). <br>
 3 **GitHub Account**: Create or log in to your GitHub account to access the xcixtask API repository. <br>
 4 **Docker**: If you prefer running the API within a Docker container, install Docker Desktop or Docker Engine according to your operating system from [docker](docker.com/get-started).
-
-<br>
 
 ### 1.1 Installation
 
@@ -38,8 +34,6 @@ pnpm install
 > Note
 > Before starting the API remember to set up configuration. Refer to [.env.example](#.env.example) file to set up the necessary configurations.
 
-<br>
-
 ### 1.2 Running the API
 
 Once the dependencies are installed and the configuration is set up, use the following command to start the API server:
@@ -51,8 +45,6 @@ pnpm run dev
 ```
 
 The API should now be running locally. You can access the API endpoints via `http://0.0.0.0:your-port`.
-
-<br>
 
 ## 2.0 Deployed API
 
@@ -81,8 +73,6 @@ https://xcixtask.fly.dev/v1/auth/authenticate
 
 > Explore Endpoints:
 > Refer to the API Documentation for detailed information on available endpoints, request parameters, and response formats.
-
-<br>
 
 ## 3.0 Example Request
 
